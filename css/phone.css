@@ -1,0 +1,92 @@
+/* rendering good in all phones  */
+/* body{
+    red color tridred when small screen
+    background-color: red;
+} */
+/* Navigation  */
+#navbar{
+    /* folding navigation bar  */
+flex-direction: column;
+}
+#navbar ul li a{
+    /* font-size: 1rem; */
+    font-size: 14px;
+    padding: 12px;
+
+    /* padding: 0px 7px; */
+    padding-bottom: 8px;
+}
+#navbar ul{
+    padding-bottom: 13px;
+}
+
+/* Home section  */
+#home{
+    height: 280px;
+    /* for phone decrese padding/margin as screen small */
+    padding: 3px 28px;
+}
+#home::before{
+    height: 400px;
+}
+#home p{
+    font-size: 13px;
+}
+
+/* Services section  */
+#services{
+    /* overflow was occur in servises boxes so gap creted in home have to fix it */
+    flex-direction: column;
+
+}
+#services .box{
+    padding: 14px;
+    margin: 2px 15px;
+    margin-bottom: 20px;
+}
+#services .box img{
+    display: block;
+    /* height: 200px; */
+    /* height: 155px; */
+    height: 130px;
+    margin: auto;
+}
+/* Clients section  */
+#clients{
+    /* quickfix if content comes out of box then will hidde and only fitted area dispaly */
+    /* if overflow then hidden  */
+    /* overflow: hidden; */
+    flex-wrap: wrap;
+}
+#clients img{
+    /* width * height ,here width change only width but height change both width and height so use height 
+    for symmetricity or we can give width and set height auto*/
+    /* width: 66px; */
+    /* height: auto; */
+    height: 96px;
+    padding: 6px;
+}
+
+/* Contact us section  */
+#contact-box form{
+    width: 80%;
+}
+#contact-box input,#contact-box textarea{
+    /* 
+When you give an element a width of 100% in CSS, you're basically saying “Make this element's content area exactly equal to the explicit width of its parent — but only if its parent has an explicit width.” So, if you have a parent container that's 400px wide, a child element given a width of 100% will also be 400px */
+width: 92%;
+}
+
+
+
+/* Footer  */
+
+
+/* utility classes  */
+.h-primary{
+font-size: 30px;
+}
+.btn{
+    font-size: 15px;
+    padding: 6px 25px;
+}

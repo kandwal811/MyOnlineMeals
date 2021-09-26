@@ -1,0 +1,232 @@
+/* CSS Reset  */
+*{
+    margin: 0;
+    padding: 0;
+}
+html{
+    scroll-behavior: smooth;
+}
+
+/* CSS Variables  */
+:root{
+    --navbar-height:59px;
+}
+/* Navigation bar  */
+#navbar{
+    display: flex;
+    align-items: center;
+    /* justify-content: center; */
+}
+#navbar{
+    /* position: absolute; */
+    /* position: absolute;comes over parent  */
+    position: sticky;
+    top: 0px;
+}
+#navbar::before{
+    content: "" ;
+    background-color: black;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    /* opacity: 0.4; */
+    opacity: 0.7;
+}
+/* Navigation bar:logo and image  */
+#logo{
+    margin: 10px 34px;
+}
+#logo img{
+    height: 59px;
+    margin: 3px 6px;
+}
+/* Navigation bar:list styling */
+#navbar ul{
+    display: flex;
+    font-family: 'Baloo Bhai 2', cursive;
+}
+#navbar ul li{
+    list-style: none;
+    font-size: 1.3rem;
+    /* border: 2px solid red; */
+}
+#navbar ul li a{
+    /* display is inlin e by default so top/bottom padding/margin not applicable */
+    display: block;
+    color: white;
+    padding: 3px 22px;
+    border-radius: 20px;
+    text-decoration: none;
+}
+#navbar ul li a:hover{
+    color: black;
+    background-color: white;
+}
+
+/* Home Section  */
+#home{
+    display: flex;
+    flex-direction: column;
+    height: 550px;
+    padding: 3px 200px;
+    justify-content: center;
+    align-items: center;
+}
+#home::before{
+    content: "";
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    background: url(../bg.jpg) no-repeat center center/cover;
+    /* height: 100%; */
+    width: 100%;
+    /* our services clides upward using %  */
+    height: 642px;
+    z-index: -1;
+    opacity: 0.89;
+}
+/* target individual tag  */
+#home h1{
+    color: white;
+    text-align: center;
+    font-family: 'Bree Serif', serif;
+}
+#home p{
+    color: white;
+    text-align: center;
+    font-size: 1.5rem;
+    font-family: 'Bree Serif', serif;
+}
+/* services section */
+#services{
+    margin: 3px;
+    /* if not flex then 3 div box takes whole space of outer one,but if flex then comes in row take necessary
+    spaceeven if 1 box then also not take whole space,but take large width as not other box there */
+    display: flex;
+    /* border: 2px solid brown; */
+}
+#services .box{
+    border: 2px solid brown;
+    padding: 34px;
+    margin: 12px 55px;
+    border-radius: 28px;
+    background-color: #e7e1e1;
+    margin-bottom: 45px;
+}
+#services .box img{
+    display: block;
+    height: 200px;
+    /* height: 175px; */
+    margin: auto;
+}
+#services .box p{
+    font-family: 'Bree Serif', serif;
+}
+/* Clients section */
+#client-section{
+    /* section height depend on inside element(if increse element height then section also strtch)
+    but if set height then not,bg image (before)not depent means if in before height of bg image 
+    increse then section height not affect ,indepent sectin and bg(before*/
+    /* if height set then on incresing eleemnt hight lead to overflow of elemtn from section  */
+    /* manually giving height,removing for responsiveness so that logoes wrap about parent section  */
+/* height: 344px;  */
+position:relative;
+/* section client-section if height set then ::before bg iamge ig 100%height takes full arae 
+but position relative then bg takes spce as sction takes (necessary) now if height of sction increse then
+bg image also incerse*/
+}
+#client-section::before{
+content: "";
+position: absolute;
+background: url(../ba-im.jpg);
+width: 100%;
+height: 100%;
+z-index: -1;
+opacity: 0.3;
+}
+#clients{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}.client-item{
+    padding: 34px;
+}
+#clients img{
+height: 124px;
+}
+
+/* Contact Aection  */
+#contact{
+    position: relative;
+}
+#contact::before{
+content: "";
+position: absolute;
+width: 100%;
+height: 100%;
+z-index: -1;
+opacity: 0.7;
+background: url(../contact.jpg) no-repeat center center/cover;
+}
+#contact-box{
+display: flex;
+justify-content: center;
+align-items: center;
+padding-bottom: 34px;
+}
+/* not target form because may be i use form in navigation bar to submit form so target it using contact-box */
+/* mess not create  */
+#contact-box input,
+#contact-box textarea{
+     /* width: 100%; */
+     width: 97%;
+     padding: 0.5rem;
+     border-radius: 9px;
+     font-size: 1.1rem;
+}
+#contact-box form{
+    width: 60%;
+
+}
+#contact-box label{
+    font-size: 1.3rem;
+    font-family: 'Bree Serif', serif;
+}
+
+footer{
+    background: black;
+    color: white;
+    padding: 9px 20px;
+}
+
+/* utility classes:-h-primary class for use throughout(for making maintainable codebase,make utility classes ,reuse
+same type of heading can be shown in differ position just by adding a class--convience) */
+.h-primary{
+    font-size: 3.8rem;
+    padding: 12px;
+    font-family: 'Bree Serif', serif;
+}
+.h-secondary{
+    font-size: 2.3rem;
+    padding: 12px;
+    font-family: 'Bree Serif', serif;
+}
+/* btn also utility class  */
+.btn{
+   padding: 6px 20px;
+   border: 2px solid white;
+   background-color: brown ;
+   color: white;
+   margin: 17px;
+   font-size: 1.5rem;
+   border-radius: 10px;
+   cursor: pointer;
+}
+/* utility class center  */
+.center{
+    text-align: center;
+}
